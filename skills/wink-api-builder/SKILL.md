@@ -22,10 +22,11 @@ Use the Wink MCP as the source of truth. Do not guess endpoint shapes or copy st
    - the primary `wink://api/<api>/operation/<key>/response/<status>`
    - `wink://api/<api>/operation/<key>/recipe` when sequence or pre-calls matter
    - `wink://api/<api>/schema/<SchemaName>` when nested objects need more detail
-4. Use `docs_search` and `wink://docs/...` only when product semantics or workflow context are missing from OpenAPI.
-5. Implement against the verified contract. Preserve Wink field names unless the host codebase already uses a deliberate translation layer.
-6. Add or update narrow tests that assert request shape, response parsing, and status handling.
-7. Deliver with the selected API and operation, any remaining assumptions, and any mismatch between the code and the current MCP contract.
+4. For authenticated APIs, open `wink://docs/developers/authentication.mdx` and capture the concrete setup: how to get the `Client ID` and `Secret Key`, how to exchange them for an access token, which auth header to send, and whether `Wink-Version` is required.
+5. Use `docs_search` and `wink://docs/...` for any other product semantics or workflow context that is missing from OpenAPI.
+6. Implement against the verified contract. Preserve Wink field names unless the host codebase already uses a deliberate translation layer.
+7. Add or update narrow tests that assert request shape, response parsing, and status handling.
+8. Deliver with the selected API and operation, auth setup, any remaining assumptions, and any mismatch between the code and the current MCP contract.
 
 ## Defaults
 
@@ -33,12 +34,14 @@ Use the Wink MCP as the source of truth. Do not guess endpoint shapes or copy st
 - Prefer request and response resources over inferring payloads from memory.
 - Prefer small typed request and response models over loose dictionaries.
 - Prefer docs for product semantics and API MCP resources for contract details.
+- Prefer `wink://docs/developers/authentication.mdx` for auth setup instead of inferring token flow from security scheme names alone.
 
 ## Gotchas
 
 - Search may return multiple plausible operations. Compare them before choosing one.
 - Existing code can be stale relative to the live MCP contract. Call out the mismatch directly.
 - Product behavior may live in docs even when request and response structure lives in OpenAPI.
+- Authentication setup lives in docs as well as the spec. Do not stop at `oauth2` or `Bearer` labels without opening the auth guide.
 - If the Wink MCP is unavailable or the contract cannot be verified, stop and report that blocker instead of guessing.
 
 ## Validation Loop
