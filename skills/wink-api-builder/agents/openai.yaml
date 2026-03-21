@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wink API Builder"
+  short_description: "Implement and review Wink API code via MCP"
+  default_prompt: "Use $wink-api-builder to implement, debug, or review a Wink API integration by consulting the connected Wink MCP before writing code."

@@ -1,0 +1,21 @@
+{
+	"name": "wink-skills",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"description": "Public AI skill packages for building against Wink with Codex and Claude.",
+	"engines": {
+		"node": ">=23.7"
+	},
+	"scripts": {
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"validate": "node --disable-warning=ExperimentalWarning --experimental-strip-types scripts/validate-skill.ts",
+		"type-check": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@types/node": "^24.0.0",
+		"prettier": "^3.6.2",
+		"typescript": "^5.8.3"
+	}
+}
