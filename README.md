@@ -1,23 +1,29 @@
 # Wink Skills
 
-Portable skill packages for building against the Wink API with AI coding agents. Works with any agent client that supports skills and MCP — the agent uses the connected Wink MCP server as source of truth for live OpenAPI contracts and docs instead of bundled schemas.
+A collection of portable agent skills for working with the [Wink](https://wink.travel) platform. Each skill lives under `skills/` and works with any agent client that supports skills and MCP.
+
+## Skills
+
+| Skill | Description |
+| ----- | ----------- |
+| [`wink-api-builder`](skills/wink-api-builder/) | Implement, review, or debug Wink API integrations using the connected Wink MCP server as source of truth. |
 
 ## Install
 
-Copy `skills/wink-api-builder/` into your agent's skill directory. The exact path depends on the tool you use.
+Pick a skill from the table above and copy its folder into your agent's skill directory.
 
 <details>
 <summary><strong>Claude Code</strong></summary>
 
-| Scope     | Path                                  |
-| --------- | ------------------------------------- |
-| User-level | `~/.claude/skills/wink-api-builder`   |
-| Repo-local | `.claude/skills/wink-api-builder`     |
+| Scope      | Path                                |
+| ---------- | ----------------------------------- |
+| User-level | `~/.claude/skills/<skill-name>`     |
+| Repo-local | `.claude/skills/<skill-name>`       |
 
 Invoke with:
 
 ```text
-/wink-api-builder add a TypeScript client for the Wink affiliate create flow
+/<skill-name> <your prompt>
 ```
 
 </details>
@@ -25,15 +31,15 @@ Invoke with:
 <details>
 <summary><strong>Codex</strong></summary>
 
-| Scope     | Path                                  |
-| --------- | ------------------------------------- |
-| User-level | `$CODEX_HOME/skills/wink-api-builder` |
-| Repo-local | `.agents/skills/wink-api-builder`     |
+| Scope      | Path                                  |
+| ---------- | ------------------------------------- |
+| User-level | `$CODEX_HOME/skills/<skill-name>`     |
+| Repo-local | `.agents/skills/<skill-name>`         |
 
 Invoke with:
 
 ```text
-Use $wink-api-builder to add a TypeScript client for the Wink affiliate create flow.
+Use $<skill-name> to <your prompt>.
 ```
 
 </details>
@@ -41,19 +47,15 @@ Use $wink-api-builder to add a TypeScript client for the Wink affiliate create f
 <details>
 <summary><strong>Other agents</strong></summary>
 
-Place the skill folder wherever your agent resolves skills from. The skill entry point is `SKILL.md` — point your agent at it, and ensure the Wink MCP server is connected in the same environment.
+Place the skill folder wherever your agent resolves skills from. The entry point for every skill is `SKILL.md` — point your agent at it and ensure any required MCP servers are connected.
 
 </details>
 
-Then connect the Wink MCP server in the same environment.
-
-See `skills/wink-api-builder/references/examples.md` for more task starters.
-
 ## Requirements
 
-- Access to a Wink MCP server that exposes Wink docs and OpenAPI resources
 - An agent client with MCP support
-- Node.js 23.7+ for local script execution
+- Node.js 23.7+ (for local development scripts)
+- Skill-specific requirements are listed in each skill's `SKILL.md`
 
 ## Development
 
