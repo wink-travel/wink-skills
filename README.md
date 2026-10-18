@@ -4,10 +4,11 @@ A collection of portable agent skills for working with the [Wink](https://wink.t
 
 ## Skills
 
-| Skill                                              | Description                                                                                               |
-| -------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| [`wink-api-builder`](skills/wink-api-builder/)     | Implement, review, or debug Wink API integrations using the connected Wink MCP server as source of truth. |
-| [`wink-hotel-booking`](skills/wink-hotel-booking/) | Find and book hotels with quoted hotel cards and guided or authorized autonomous MPP payments.            |
+| Skill                                                  | Description                                                                                               |
+| ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| [`wink-api-builder`](skills/wink-api-builder/)         | Implement, review, or debug Wink API integrations using the connected Wink MCP server as source of truth. |
+| [`wink-hotel-booking`](skills/wink-hotel-booking/)     | Find and book hotels with quoted hotel cards and guided or authorized autonomous MPP payments.            |
+| [`wink-earn-commission`](skills/wink-earn-commission/) | Start earning commission with affiliate links, collections, storefronts and authorized promotion.         |
 
 ## Install
 
