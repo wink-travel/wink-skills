@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wink Hotel Booking"
+  short_description: "Find hotels, show quoted cards and book as authorized"
+  default_prompt: "Use $wink-hotel-booking to help me choose a hotel or book within my delegated limits, showing the quoted hotel card by default."

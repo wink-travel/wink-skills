@@ -4,9 +4,10 @@ A collection of portable agent skills for working with the [Wink](https://wink.t
 
 ## Skills
 
-| Skill | Description |
-| ----- | ----------- |
-| [`wink-api-builder`](skills/wink-api-builder/) | Implement, review, or debug Wink API integrations using the connected Wink MCP server as source of truth. |
+| Skill                                              | Description                                                                                               |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| [`wink-api-builder`](skills/wink-api-builder/)     | Implement, review, or debug Wink API integrations using the connected Wink MCP server as source of truth. |
+| [`wink-hotel-booking`](skills/wink-hotel-booking/) | Find and book hotels with quoted hotel cards and guided or authorized autonomous MPP payments.            |
 
 ## Install
 
@@ -15,10 +16,10 @@ Pick a skill from the table above and copy its folder into your agent's skill di
 <details>
 <summary><strong>Claude Code</strong></summary>
 
-| Scope      | Path                                |
-| ---------- | ----------------------------------- |
-| User-level | `~/.claude/skills/<skill-name>`     |
-| Repo-local | `.claude/skills/<skill-name>`       |
+| Scope      | Path                            |
+| ---------- | ------------------------------- |
+| User-level | `~/.claude/skills/<skill-name>` |
+| Repo-local | `.claude/skills/<skill-name>`   |
 
 Invoke with:
 
@@ -31,10 +32,10 @@ Invoke with:
 <details>
 <summary><strong>Codex</strong></summary>
 
-| Scope      | Path                                  |
-| ---------- | ------------------------------------- |
-| User-level | `$CODEX_HOME/skills/<skill-name>`     |
-| Repo-local | `.agents/skills/<skill-name>`         |
+| Scope      | Path                              |
+| ---------- | --------------------------------- |
+| User-level | `$CODEX_HOME/skills/<skill-name>` |
+| Repo-local | `.agents/skills/<skill-name>`     |
 
 Invoke with:
 
