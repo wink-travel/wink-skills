@@ -1,0 +1,4 @@
+interface:
+  display_name: "Earn Commission with Wink"
+  short_description: "Create affiliate offers and earn booking commission"
+  default_prompt: "Use $wink-earn-commission to help me start earning commission on Wink with affiliate links, collections or a storefront."
