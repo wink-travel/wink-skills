@@ -1,9 +1,9 @@
 ---
 name: wink-hotel-booking
-description: Find and book hotels through Wink's Booking Engine MCP, showing quoted hotel cards and supporting guided or user-authorized autonomous booking.
+description: Find and book hotels through Wink's Booking Engine MCP, showing quoted hotel cards and booking confirmations, and supporting guided or user-authorized autonomous booking.
 license: Apache-2.0
 metadata:
-  version: "0.2.0"
+  version: "0.4.0"
   standard: "Agent Skills"
 ---
 
@@ -33,6 +33,11 @@ Let users choose from options or select and book autonomously when they delegate
 
 Read [payment and recovery](references/payment.md) before obtaining an SPT or calling `agentic_booking_pay`.
 
-Confirm success only from the server (`PAYMENT_SUCCEEDED` for the pay tool). Return the confirmation code, paid amount/currency and itinerary. For details or receipts, locate the booking using `booking_search` or `booking_search_list`, then call `booking_get` or `booking_receipt_get` with the actual booking ID.
+Confirm success only from the server (`PAYMENT_SUCCEEDED` for the pay tool). Return the confirmation code, paid amount/currency and itinerary.
+
+- By default, then show the booking confirmation card using `booking_confirmation_show` with the paid `quoteId`. Honor requests to skip visuals; if rendering is unavailable, the text confirmation suffices.
+- The card only reads a confirmed booking. Never call it to check an unresolved payment; follow the recovery rules instead.
+
+For details or receipts, locate the booking using `booking_search` or `booking_search_list`, then call `booking_get` or `booking_receipt_get` with the actual booking ID.
 
 For missing capabilities, consult the [booking guide](https://wink.travel/developers/agentic-payments/) or Wink Docs MCP rather than guessing calls.
