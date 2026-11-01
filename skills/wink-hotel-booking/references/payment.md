@@ -12,7 +12,7 @@ Without a compatible wallet, continue selection and explain what is needed to pa
 
 ## Results and retries
 
-- `PAYMENT_SUCCEEDED`: return `bookingConfirmationCode`; retain `chargeReference`.
+- `PAYMENT_SUCCEEDED`: return `bookingConfirmationCode`, retain `chargeReference` and show the booking confirmation card with the same `quoteId`.
 - `DECLINED`: the quote is terminal. Any authorized retry needs a fresh quote checked against existing authority.
 - `IN_PROGRESS`, timeout, lost response or server error after submission: wait briefly, then retry the **same quote and SPT**. Never create another payment while the outcome is unknown.
 
